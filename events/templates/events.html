@@ -1,0 +1,57 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Renata Król - Wydarzenia</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .log {
+            color: black !important;
+        }
+
+        .nl {
+            color: #757575 !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <h2 class="text-center mt-5">Nadchodzące wydarzenia</h2>
+                <hr>
+                <div class="row">
+                    {% for e in events %}
+                        <div class="col-md-4 mt-4">
+                            <div class="card text-white bg-primary">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ e.polish_date }}</h5>
+                                    <p>{{ e.title }}</p>
+                                    <a class="fs-12 fw-600" href="{% url 'events:event_page' e.id %}">Zobacz <i class="fa fa-angle-right pl-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <h3 class="text-center mt-8">Minione wydarzenia</h3>
+                <hr>
+                <div class="row">
+                {% for e in old_events %}
+                    <div class="col-md-4 mt-4">
+                        <div class="card border hover-shadow-4">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ e.polish_date }}</h5>
+                                <p>{{ e.title }}</p>
+                                <a class="fs-12 fw-600" href="{% url 'events:event_page' e.id %}">Zobacz <i class="fa fa-angle-right pl-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

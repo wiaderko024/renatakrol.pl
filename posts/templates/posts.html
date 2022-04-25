@@ -1,0 +1,54 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Renata Król - Posty</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .nl {
+            color: #757575 !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <header class="header text-white pt-12 pb-10" style="background-image: url({% static 'img/rpk.jpg' %});">
+        <div class="container">
+            <h2 class="display-4">Renata Król</h2>
+            <br>
+            <h2 class="display-4">Yoga Pilates Głos</h2>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <header class="section-header">
+                <small>Posty</small>
+                <h2>Aktualności</h2>
+                <hr>
+                </header>
+
+                {% for post in posts %}
+                    <div class="row gap-y align-items-center bcard mb-5">
+                        <div class="col-md-5 mx-auto">
+                            <img class="rounded" src="{{ post.cover.url }}" alt="...">
+                        </div>
+
+                        <div class="col-md-6 text-center text-md-left">
+                            <small>{{ post.kind }} {{ post.created_at }}</small>
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.description }}</p>
+                            <br>
+                            <a class="btn btn-outline-danger" href="{% url 'posts:post_page' post.id %}">Zobacz post <i class="ti-arrow-right fs-9 ml-2"></i></a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

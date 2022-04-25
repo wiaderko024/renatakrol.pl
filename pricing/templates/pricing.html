@@ -1,0 +1,34 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Renata Król - Cennik</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .navbar-open .navbar .nav-navbar>.nav-link {
+            color: #757575 !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section class="section text-white" style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
+        <canvas class="constellation" width="1440" height="727"></canvas>
+
+        <div class="container">
+          <header class="section-header">
+            <small>Yoga Pilates Głos</small>
+            <h2>Cennik</h2>
+            <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab, aperiam aspernatur beatae doloribus est ex exercitationem hic magnam magni mollitia necessitatibus quaerat? Dicta doloremque excepturi minima non pariatur quasi.</p>
+          </header>
+
+            {% for price in prices %}
+                <p class="text-center">{{ price }}</p>
+            {% endfor %}
+
+        </div>
+      </section>
+{% endblock %}

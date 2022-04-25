@@ -1,0 +1,50 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Renata Król - Kontakt</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .log {
+            color: black !important;
+        }
+
+        .nl {
+            color: #757575 !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-10 mx-auto">Renata Król - Kontakt</h1>
+    <hr>
+
+    <section class="section py-0">
+        <div data-provide="slider" data-autoplay="true" data-slides-to-show="2" data-css-ease="linear" data-speed="12000" data-autoplay-speed="0" data-pause-on-hover="false">
+            {% for photo in photos %}
+                <div class="p-2">
+                    <div class="rounded bg-img h-400" style="background-image: url({{ photo }});"></div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <h1 class="mx-auto mt-6 text-center">Kontakt</h1>
+                <hr>
+                <h3 class="mx-auto text-center">Dane kontaktowe:</h3>
+                <div class="container mb-10 text-center mt-7">
+                    <p class="mx-auto">Numer telefonu: 784 123 099</p>
+                    <p class="mx-auto">Adres e-mail: renatajustynakrol@gmail.com</p>
+                    <p class="mx-auto">Facebook: Renata Król</p>
+                    <p class="mx-auto">Instagram: renatakrol</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+{% endblock %}

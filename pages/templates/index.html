@@ -1,0 +1,153 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block styles %}
+    <style>
+        .navbar-open .navbar .nav-navbar>.nav-link {
+            color: #757575 !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <!-- Header -->
+    <header class="header text-white pt-12 pb-10" style="background-image: url({% static 'img/mainheader.jpeg' %}); min-height: 100vh;">
+      <div class="container">
+        <h2 class="display-4 mt-8">Renata Król</h2>
+        <br>
+        <h2 class="display-4">Yoga Pilates Głos</h2>
+      </div>
+    </header><!-- /.header -->
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+
+      <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Populate the page
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+      <section class="section">
+        <div class="container">
+            <div class="container">
+              <div class="row gap-y align-items-center" style="min-height: 70vh;">
+
+                <div class="col-md-6 text-center text-md-right">
+                  <h3 class="fw-500">Renata Król</h3>
+                  <br>
+                  <p>Nazywam się Renata Król a to jest moja strona internetowa. Znajdziesz tutaj dużo informacji na temat yogi, pilatesu oraz głosu, którymi zajmuję się zawodowo. Oprócz tego znajdziesz również ciekawe wpisy z mojego życia. W sekcji wydarzenia możesz także zobaczyć nadchodzące organizowane przeze mnie wydarzenia</p>
+                </div>
+
+                <div class="col-md-6">
+                  <img class="rounded-md ml-md-4" src="{% static 'img/renia.jpg' %}" alt="...">
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </section>
+        <section class="section py-0 mb-9">
+            <div data-provide="slider" data-autoplay="true" data-slides-to-show="2" data-css-ease="linear" data-speed="12000" data-autoplay-speed="0" data-pause-on-hover="false">
+                {% for p in photos %}
+                <div class="p-2">
+                    <div class="rounded bg-img h-400" style="background-image: url({{ p }})"></div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+    <section class="section bg-dark text-white mb-7">
+        <div class="container">
+          <div class="text-center mb-8">
+            <h2>Wydarzenia</h2>
+            <p>Weź udział w nadchodzących wydarzeniach!</p>
+          </div>
+
+
+          <div class="row gap-y">
+
+              {% for event in events %}
+                <div class="col-lg-4">
+                        <div class="card card-inverse">
+                        <div class="card-body">
+                            <h6 class="card-title fw-500">{{ event.polish_date }}</h6>
+                            <p class="small-1">{{ event.title }}</p>
+                            <a class="text-primary small-3 fw-600" href="{% url 'events:event_page' event.id %}">Zobacz <i class="ti-angle-right fs-7 pl-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+
+          </div>
+
+        </div>
+      </section>
+
+        <section class="section mb-7 text-justify">
+            <div class="container" style="font-size: 1.1rem;">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eaque ipsa iure non perspiciatis?
+                    Commodi error eum nihil nisi pariatur repudiandae similique soluta vero. Dolor earum ipsum saepe
+                    sapiente veritatis.
+
+                Beatae et maiores necessitatibus nulla odio perspiciatis quam quisquam quod ullam, voluptate! A
+                    accusamus architecto autem, dignissimos est fugit ipsam iste laboriosam molestias nobis nostrum
+                    numquam officia quia soluta ut!
+                Cupiditate, dolor fugiat harum reiciendis ut vitae. Fugit nostrum officia similique soluta vero.
+                    Accusamus, dolores nam! Ducimus est harum incidunt officia placeat praesentium quis repudiandae
+                    totam vel, voluptatibus! Similique, vel!
+
+                Consequatur cumque esse explicabo ipsam nisi recusandae tempore ut voluptatibus voluptatum? At
+                    blanditiis doloremque eligendi incidunt labore officiis placeat, quasi? Accusamus corporis
+                    dignissimos, eveniet in mollitia omnis perferendis quaerat voluptatem.
+
+               Accusamus aliquid animi at atque beatae consequatur corporis cum cupiditate distinctio, eaque ex,
+                    fugit impedit ipsam laboriosam maxime minima natus rem repellat similique velit! Ducimus ipsa libero
+                    quis temporibus voluptatibus!
+
+            </div>
+        </section>
+
+      <section class="section text-white bg-fixed text-center py-11" style="background-image: url({% static 'img/ren.jpeg' %})" data-overlay="3">
+        <div class="container">
+          <h2 class="display-1"><strong>Yoga Pilates Głos</strong></h2>
+        </div>
+      </section>
+
+    <section class="section">
+        <div class="container">
+            <header class="section-header">
+                <small>Wpisy</small>
+                <h2>Aktualności</h2>
+                <hr>`
+            </header>
+            {% if posts.count != 0 %}
+
+                {% for post in posts %}
+                    <div class="row gap-y align-items-center bcard">
+
+                        <div class="col-md-5 mx-auto">
+                            <img class="rounded" src="{{ post.cover.url }}" alt="...">
+                        </div>
+
+
+                        <div class="col-md-6 text-center text-md-left">
+                            <small>{{ post.kind }} {{ post.created_at }}</small>
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.description }}</p>
+                            <br>
+                            <a class="btn btn-outline-danger" href="{% url 'posts:post_page' post.id %}">Zobacz post <i class="ti-arrow-right fs-9 ml-2"></i></a>
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            {% endif %}
+
+        </div>
+    </section>
+
+    </main>
+
+{% endblock %}

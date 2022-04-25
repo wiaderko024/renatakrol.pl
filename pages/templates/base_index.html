@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+      {% block title %}
+        <title>Renata Król - Yoga Pilates Głos</title>
+      {% endblock %}
+
+    <!-- Styles -->
+    <link href="{% static 'assets/css/page.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+    <style>
+        @media (min-width: 0px) and (max-width: 900px) {
+            .xd {
+                margin-left: 25% !important;
+            }
+        }
+    </style>
+
+    {% block styles %}
+    {% endblock %}
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="{% static 'assets/img/apple-touch-icon.png' %}">
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}">
+
+    <!--  Open Graph Tags -->
+    <meta property="og:title" content="Renata Król">
+    <meta property="og:description" content="Renata Król - Yoga Pilates Głos">
+    <meta name="twitter:card" content="summary_large_image">
+  </head>
+
+  <body>
+
+    {% include 'navbar.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'footer.html' %}
+
+    <!-- Scripts -->
+    <script src="{% static 'assets/js/page.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+
+  </body>
+</html>

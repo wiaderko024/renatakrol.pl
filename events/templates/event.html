@@ -1,0 +1,28 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block styles %}
+    <style>
+        .log {
+            color: black !important;
+        }
+
+        .nl {
+            color: #757575 !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <main class="main-content">
+        <section class="section">
+            <div class="container text-center align-content-center mt-8">
+                <h2>{{ event.title }}</h2>
+                <b>{{ event.polish_date }}</b>
+                <hr>
+                <b class="mt-7">Gdzie? - {{ event.place }}</b>
+                <p class="mt-5">{{ event.description }}</p>
+            </div>
+        </section>
+    </main>
+{% endblock %}

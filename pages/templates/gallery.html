@@ -1,0 +1,50 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Renata Król - Galeria</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .log {
+            color: black !important;
+        }
+
+        .nl {
+            color: #757575 !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center mt-10">Galeria</h1>
+        <hr>
+
+                <div class="row mb-7">
+            <div class="col-lg-8 mx-auto">
+                <div class="gallery gallery-4-type4" data-provide="photoswipe">
+                    <a class="gallery-item" href="{{ first_photo }}">
+                      <img src="{{ first_photo }}" alt="...">
+                    </a>
+                    <div class="gallery-item-group">
+                        {% for p in next_photos %}
+                            <a class="gallery-item" href="{{ p }}">
+                                <img src="{{ p }}" alt="...">
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <div class="gallery-extra-items">
+                        {% for p in photos %}
+                            <a class="gallery-item" href="{{ p }}">
+                                <img src="{{ p }}" alt="...">
+                            </a>
+                        {% endfor %}
+                    </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

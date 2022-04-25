@@ -1,0 +1,30 @@
+
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-stick-dark" data-navbar="sticky">
+    <div class="container">
+
+      <div class="navbar-left">
+        <button class="navbar-toggler" type="button">&#9776;</button>
+        <a class="navbar-brand" href="{% url 'home_page' %}">
+          <h1 class="logo-light log">RenataKrol.pl</h1>
+          <h1 class="logo-dark log" style="color: white;">RenataKrol.pl</h1>
+        </a>
+      </div>
+
+      <section class="navbar-mobile">
+        <span class="navbar-divider d-mobile-none"></span>
+
+        <nav class="nav nav-navbar">
+          <a class="nav-link nl" href="{% url 'home_page' %}" style="color: white;">Strona główna</a>
+          <a class="nav-link nl" href="{% url 'posts:all_posts_page' %}" style="color: white;">Wpisy</a>
+          <a class="nav-link nl" href="{% url 'events:all_events_page' %}" style="color: white;">Wydarzenia</a>
+          <a class="nav-link nl" href="{% url 'about_me' %}" style="color: white;">O mnie</a>
+          <a class="nav-link nl" href="{% url 'contact_page' %}" style="color: white;">Kontakt</a>
+          <a class="nav-link nl" href="{% url 'gallery_page' %}" style="color: white;">Galeria</a>
+            <a class="nav-link nl" href="{% url 'pricing:pricing_page' %}" style="color: white;">Cennik</a>
+        </nav>
+      </section>
+
+
+    </div>
+  </nav>
