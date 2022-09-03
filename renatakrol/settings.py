@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_2!!fs8c#+k+!^s-ira!%w)4-drmuui%ug#(-35#4)hx+5a0#8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['vps-ac8cd77d.vps.ovh.net', 'renatakrol.pl', '135.125.190.45']
+ALLOWED_HOSTS = ['vps-ac8cd77d.vps.ovh.net', 'renatakrol.pl', '135.125.190.45', '127.0.0.1']
 
 
 # Application definition
@@ -82,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'renatakrol',
-        'USER': 'kajetandev',
-        'PASSWORD': 'tojesthaslo',
+        'USER': 'postgres',
+        'PASSWORD': 'admin1',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
