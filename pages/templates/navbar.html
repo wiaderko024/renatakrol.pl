@@ -3,7 +3,6 @@
 {% block styles %}
     <style>
         .my-navbar {
-            background-color: #18353f;
             z-index: 50;
         }
         .stick {
@@ -11,7 +10,7 @@
         }
         .navbar {
             top: 0;
-            height: 100px;
+            {#height: 100px;#}
             padding: 0;
         }
         .full-logo {
@@ -28,12 +27,20 @@
             padding: 2px;
         }
         .nav-container {
-            height: 100px;
+            max-width: none !important;
         }
 
-        @media (min-width: 1200px) {
-            .nav-container {
-                max-width: none !important;
+        {#@media(min-width: 1200px) {#}
+        {#    .nav-container {#}
+        {#        max-width: none !important;#}
+        {#    }#}
+
+        @media(max-width: 990px) {
+            .full-logo {
+                display: none;
+            }
+            .navbar-right {
+                margin-right: 15px !important;
             }
         }
 
@@ -42,10 +49,10 @@
 
  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-stick-dark flex-column my-navbar" data-navbar="sticky">
-    <div class="container nav-container" style="padding: 0; margin: 0;">
+    <div class="container nav-container" style="padding: 0; margin: 0; height: 100px; background-color: #18353f;">
 
           <div class="navbar-left">
-    {#        <button class="navbar-toggler" type="button">&#9776;</button>#}
+            <button class="navbar-toggler" type="button" style="color: #356a6b; height: 75px; width: 75px;">&#9776;</button>
     {#        <a class="navbar-brand" href="{% url 'home_page' %}">#}
     {#          <h1 class="logo-light log">RenataKrol.pl</h1>#}
     {#          <h1 class="logo-dark log" style="color: white;">RenataKrol.pl</h1>#}
