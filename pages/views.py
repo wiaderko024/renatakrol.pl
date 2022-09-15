@@ -5,10 +5,8 @@ from events.models import Event
 
 def make_list(queryset):
     my_list = []
-
     for q in queryset:
         my_list.append(q)
-
     return my_list
 
 
@@ -27,7 +25,6 @@ def home_page(request):
 
     for p in posts:
         photos.append(p.cover.url)
-
     for p in all_photos:
         photos.append(p.photo.url)
 

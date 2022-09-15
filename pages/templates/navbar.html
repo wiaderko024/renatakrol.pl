@@ -27,43 +27,67 @@
             align-items: center;
             padding: 2px;
         }
+        .nav-container {
+            height: 100px;
+        }
+
+        @media (min-width: 1200px) {
+            .nav-container {
+                max-width: none !important;
+            }
+        }
+
     </style>
 {% endblock %}
 
  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-stick-dark my-navbar" data-navbar="sticky">
-    <div class="container" style="padding: 0; margin: 0;">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-stick-dark flex-column my-navbar" data-navbar="sticky">
+    <div class="container nav-container" style="padding: 0; margin: 0;">
 
-      <div class="navbar-left">
-{#        <button class="navbar-toggler" type="button">&#9776;</button>#}
-{#        <a class="navbar-brand" href="{% url 'home_page' %}">#}
-{#          <h1 class="logo-light log">RenataKrol.pl</h1>#}
-{#          <h1 class="logo-dark log" style="color: white;">RenataKrol.pl</h1>#}
-{#        </a>#}
+          <div class="navbar-left">
+    {#        <button class="navbar-toggler" type="button">&#9776;</button>#}
+    {#        <a class="navbar-brand" href="{% url 'home_page' %}">#}
+    {#          <h1 class="logo-light log">RenataKrol.pl</h1>#}
+    {#          <h1 class="logo-dark log" style="color: white;">RenataKrol.pl</h1>#}
+    {#        </a>#}
 
-          <div class="full-logo">
-              <img src="{% static 'img/full_logo.png' %}" alt="full-logo" height="213" width="213">
+              <div class="full-logo">
+                  <img src="{% static 'img/full_logo.png' %}" alt="full-logo" height="213" width="213">
+              </div>
           </div>
-      </div>
 
-      <section class="navbar-mobile">
-        <span class="navbar-divider d-mobile-none"></span>
+          <section class="navbar-mobile">
+            <span class="navbar-divider d-mobile-none"></span>
 
-        <nav class="nav nav-navbar" style="color: #b7b5b4; font-family: 'Courier', monospace; font-size: 17px;">
-          <a class="nav-link nl" href="{% url 'home_page' %}" style="font-weight: normal;">Strona główna</a>
-          <a class="nav-link nl" href="{% url 'posts:all_posts_page' %}" style="font-weight: normal;">Wpisy</a>
-          <a class="nav-link nl" href="{% url 'events:all_events_page' %}" style="font-weight: normal;">Wydarzenia</a>
-          <a class="nav-link nl" href="{% url 'about_me' %}" style="font-weight: normal;">O mnie</a>
-          <a class="nav-link nl" href="{% url 'contact_page' %}" style="font-weight: normal;">Kontakt</a>
-          <a class="nav-link nl" href="{% url 'gallery_page' %}" style="font-weight: normal;">Galeria</a>
-            <a class="nav-link nl" href="{% url 'pricing:pricing_page' %}" style="font-weight: normal;">Cennik</a>
-        </nav>
-      </section>
-        
-        <div class="navbar-right" style="display: flex; margin-right: -215px;">
-            <h1 class="navbar-brand" href="{% url 'home_page' %}" style="font-size: 19px; font-family: Courier, monospace; color: #356a6b !important;">RenataKrol.pl</h1>
-            <img src="{% static 'img/logo.png' %}" alt="" height="50" width="50">
-        </div>
+            <nav class="nav nav-navbar" style="color: #b7b5b4; font-family: 'Courier', monospace; font-size: 17px;">
+              <a class="nav-link nl" href="{% url 'home_page' %}" style="font-weight: normal;">Strona główna</a>
+              <a class="nav-link nl" href="{% url 'posts:all_posts_page' %}" style="font-weight: normal;">Wpisy</a>
+              <a class="nav-link nl" href="{% url 'events:all_events_page' %}" style="font-weight: normal;">Wydarzenia</a>
+              <a class="nav-link nl" href="{% url 'about_me' %}" style="font-weight: normal;">O mnie</a>
+              <a class="nav-link nl" href="{% url 'contact_page' %}" style="font-weight: normal;">Kontakt</a>
+              <a class="nav-link nl" href="{% url 'gallery_page' %}" style="font-weight: normal;">Galeria</a>
+                <a class="nav-link nl" href="{% url 'pricing:pricing_page' %}" style="font-weight: normal;">Cennik</a>
+            </nav>
+          </section>
+
+            <div class="navbar-right mr-8" style="display: flex;">
+                <h1 class="navbar-brand" href="{% url 'home_page' %}" style="font-size: 19px; font-family: Courier, monospace; color: #356a6b !important;">RenataKrol.pl</h1>
+                <img src="{% static 'img/logo.png' %}" alt="" height="50" width="50">
+            </div>
 
     </div>
+  <div class="container nav-container rainbow" style="display: block !important; margin: 0; padding: 0;">
+      <div class="rainbow-row" style="display: flex;">
+          <div class="red" style="background-color: #ac3c38; height: 3px; width: 25%;"></div>
+          <div class="yellow" style="background-color: #ffd41f; height: 3px; width: 75%;"></div>
+      </div>
+      <div class="rainbow-row" style="display: flex;">
+          <div class="pink" style="background-color: #e97690; height: 3px; width: 50%"></div>
+          <div class="green" style="background-color: #8abd41; height: 3px; width: 50%"></div>
+      </div>
+      <div class="rainbow-row" style="display: flex;">
+          <div class="purple" style="background-color: #93699f; height: 3px; width: 40%"></div>
+          <div class="blue" style="background-color: #6298b8; height: 3px; width: 60%"></div>
+      </div>
+  </div>
   </nav>
