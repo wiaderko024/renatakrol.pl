@@ -5,10 +5,8 @@ from events.models import Event
 
 def make_list(queryset):
     my_list = []
-
     for q in queryset:
         my_list.append(q)
-
     return my_list
 
 
@@ -24,10 +22,13 @@ def home_page(request):
 
     if all_events.count() >= 3:
         new_events = [events_list.pop(), events_list.pop(), events_list.pop()]
+    elif all_events.count() == 2:
+        new_events = [events_list.pop(), events_list.pop()]
+    elif all_events.count() == 1:
+        new_events = [events_list.pop()]
 
     for p in posts:
         photos.append(p.cover.url)
-
     for p in all_photos:
         photos.append(p.photo.url)
 
@@ -70,7 +71,12 @@ def gallery_page(request):
         list_photos.append(photo.photo.url)
 
     first_photo = list_photos[0]
-    next_photos = [list_photos[1], list_photos[2], list_photos[3]]
+
+    try:
+        next_photos = [list_photos[1], list_photos[2], list_photos[3]]
+    except IndexError:
+        next_photos = None
+
     photos = []
 
     if len(list_photos) > 4:

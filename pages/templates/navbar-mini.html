@@ -12,34 +12,16 @@
             top: 0;
             padding: 0;
         }
-        .full-logo {
-            width: 215px;
-            height: 215px;
-            border-radius: 50%;
-            background-color: #18353f;
-            z-index: 100;
-            margin-left: 5px;
-            margin-top: 115px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2px;
-        }
         .nav-container {
             max-width: none !important;
         }
 
-        {#@media(min-width: 1200px) {#}
-        {#    .nav-container {#}
-        {#        max-width: none !important;#}
-        {#    }#}
-
-        @media(max-width: 990px) {
-            .full-logo {
+        @media (max-width: 990px) {
+            .nav-full-logo {
                 display: none;
             }
-            .navbar-right {
-                margin-right: 15px !important;
+            .nav-logo {
+                display: inline !important;
             }
         }
 
@@ -52,16 +34,9 @@
 
           <div class="navbar-left">
             <button class="navbar-toggler" type="button" style="color: #356a6b; height: 75px; width: 75px;">&#9776;</button>
-    {#        <a class="navbar-brand" href="{% url 'home_page' %}">#}
-    {#          <h1 class="logo-light log">RenataKrol.pl</h1>#}
-    {#          <h1 class="logo-dark log" style="color: white;">RenataKrol.pl</h1>#}
-    {#        </a>#}
-
-              <div class="full-logo">
-                  <a href="{% url 'home_page' %}">
-                      <img src="{% static 'img/full_logo.png' %}" alt="full-logo" height="213" width="213">
-                  </a>
-              </div>
+            <a class="navbar-brand" href="{% url 'home_page' %}" style="margin-left: 1.7rem;">
+                <img class="nav-full-logo" src="{% static 'img/logo.png' %}" alt="">
+            </a>
           </div>
 
           <section class="navbar-mobile">
@@ -78,11 +53,11 @@
             </nav>
           </section>
 
-            <div class="navbar-right mr-8" style="display: flex;">
+            <div class="navbar-right mr-3" style="display: flex;">
                 <a href="{% url 'home_page' %}">
                     <h1 class="navbar-brand" href="{% url 'home_page' %}" style="font-size: 19px; font-family: Courier, monospace; color: #356a6b !important;">RenataKrol.pl</h1>
                 </a>
-                <img src="{% static 'img/logo.png' %}" alt="" height="50" width="50">
+                <img class="nav-logo" src="{% static 'img/logo.png' %}" alt="" height="50" width="50" style="display: none;">
             </div>
 
     </div>

@@ -6,19 +6,78 @@
         .navbar-open .navbar .nav-navbar>.nav-link {
             color: #757575 !important;
         }
+
+        .header {
+            background-color: white;
+        }
+        .header-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .caption {
+            position: absolute;
+            bottom: 5%;
+            text-align: center;
+            width: 100%;
+            font-family: Courier, monospace;
+            font-size: 42px;
+            font-weight: bold;
+            color: #18353f;
+        }
+        .header-group {
+            text-align: center;
+            position: relative;
+            height: 100vh;
+        }
+        .dot1 {
+            height: 11px;
+            width: 11px;
+            background-color: #ac3c38;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .dot2 {
+            height: 11px;
+            width: 11px;
+            background-color: #6298b8;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-height: 940px) {
+            .header-img {
+                height: 99%;
+                width: 99%;
+            }
+        }
+        @media (max-width: 800px) {
+            .header-img {
+                width: 100%;
+                height: 50%;
+                top: 8rem;
+            }
+            .caption {
+                top: 25rem;
+                font-size: 30px;
+            }
+            .header-group {
+                height: 60vh;
+            }
+        }
     </style>
 {% endblock %}
 
 {% block content %}
-    <!-- Header -->
-    <header class="header text-white pt-12 pb-10" style="background-image: url({% static 'img/mainheader.jpeg' %}); min-height: 100vh;">
-      <div class="container">
-        <h2 class="display-4 mt-8">Renata Król</h2>
-        <br>
-        <h2 class="display-4">Yoga Pilates Głos</h2>
-      </div>
-    </header><!-- /.header -->
+    {% include 'navbar.html' %}
 
+    <header class="header text-dark" style="padding: 0;">
+        <div class="header-group">
+            <img class="header-img" src="{% static 'img/header_ren.png' %}" alt="...">
+            <div class="caption">YOGA <span class="dot1"></span> PILATES <span class="dot2"></span> GŁOS</div>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -29,6 +88,17 @@
       | Populate the page
       |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
       !-->
+
+    <section class="section py-0">
+        <div data-provide="slider" data-autoplay="true" data-slides-to-show="2" data-css-ease="linear" data-speed="12000" data-autoplay-speed="0" data-pause-on-hover="false">
+            {% for p in photos %}
+            <div class="p-2">
+                <div class="rounded bg-img h-400" style="background-image: url({{ p }})"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
       <section class="section">
         <div class="container">
             <div class="container">
@@ -48,15 +118,6 @@
             </div>
         </div>
       </section>
-        <section class="section py-0 mb-9">
-            <div data-provide="slider" data-autoplay="true" data-slides-to-show="2" data-css-ease="linear" data-speed="12000" data-autoplay-speed="0" data-pause-on-hover="false">
-                {% for p in photos %}
-                <div class="p-2">
-                    <div class="rounded bg-img h-400" style="background-image: url({{ p }})"></div>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
 
     <section class="section bg-dark text-white mb-7">
         <div class="container">
@@ -86,7 +147,7 @@
       </section>
 
         <section class="section mb-7 text-justify">
-            <div class="container" style="font-size: 1.1rem;">
+            <div class="container" style="font-size: 1.1rem; font-family: 'Courier New', monospace;">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eaque ipsa iure non perspiciatis?
                     Commodi error eum nihil nisi pariatur repudiandae similique soluta vero. Dolor earum ipsum saepe
                     sapiente veritatis.
@@ -120,7 +181,7 @@
             <header class="section-header">
                 <small>Wpisy</small>
                 <h2>Aktualności</h2>
-                <hr>`
+                <hr>
             </header>
             {% if posts.count != 0 %}
 
@@ -133,7 +194,7 @@
 
 
                         <div class="col-md-6 text-center text-md-left">
-                            <small>{{ post.kind }} {{ post.created_at }}</small>
+                            <small>{{ post.created_at }}</small>
                             <h3>{{ post.title }}</h3>
                             <p>{{ post.description }}</p>
                             <br>

@@ -14,14 +14,22 @@
         .nl {
             color: #757575 !important;
         }
+
+        @media (max-width: 990px) {
+            .main-con {
+                margin-top: 110px;
+            }
+        }
     </style>
 {% endblock %}
 
 {% block content %}
+    {% include 'navbar-mini.html' %}
+
     <main class="main-content">
         <section class="section">
-            <div class="container">
-                <h2 class="text-center mt-5">Nadchodzące wydarzenia</h2>
+            <div class="container main-con">
+                <h2 class="text-center mt-6">Nadchodzące wydarzenia</h2>
                 <hr>
                 <div class="row">
                     {% for e in events %}

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_2!!fs8c#+k+!^s-ira!%w)4-drmuui%ug#(-35#4)hx+5a0#8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vps-ac8cd77d.vps.ovh.net', 'renatakrol.pl', '135.125.190.45', '127.0.0.1', '192.168.18.11']
 
 
 # Application definition
@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'renatakrol.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'renatakrol',
+        'USER': 'postgres',
+        'PASSWORD': 'admin1',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
