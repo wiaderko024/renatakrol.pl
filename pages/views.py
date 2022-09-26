@@ -71,7 +71,12 @@ def gallery_page(request):
         list_photos.append(photo.photo.url)
 
     first_photo = list_photos[0]
-    next_photos = [list_photos[1], list_photos[2], list_photos[3]]
+
+    try:
+        next_photos = [list_photos[1], list_photos[2], list_photos[3]]
+    except IndexError:
+        next_photos = None
+
     photos = []
 
     if len(list_photos) > 4:
