@@ -14,6 +14,11 @@
         .header {
             background-color: white;
         }
+        .header-group {
+            text-align: center;
+            position: relative;
+            height: 100vh;
+        }
         .header-img {
             height: 100%;
             width: 100%;
@@ -26,6 +31,23 @@
             top: 24%;
             left: 10%;
         }
+
+        @media (max-width: 800px) {
+            .header-img {
+                position: absolute;
+                top: 8rem;
+                left: 0;
+                height: 50%;
+                width: 100%;
+            }
+            .caption {
+                top: 38rem;
+                font-size: 43px;
+            }
+            .header-group {
+                height: 100vh;
+            }
+        }
     </style>
 {% endblock %}
 
@@ -33,7 +55,7 @@
     {% include 'navbar-mini.html' %}
 
     <header class="header text-dark" style="padding: 0;">
-        <div style="text-align: center; position: relative; height: 100vh;">
+        <div class="header-group">
             <img class="header-img" src="{% static 'img/oferta.png' %}" alt="...">
             <div class="caption">O F E R T A</div>
         </div>
