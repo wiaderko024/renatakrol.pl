@@ -59,7 +59,9 @@
     {#        </a>#}
 
               <div class="full-logo">
-                  <img src="{% static 'img/full_logo.png' %}" alt="full-logo" height="213" width="213">
+                  <a href="{% url 'home_page' %}">
+                      <img src="{% static 'img/full_logo.png' %}" alt="full-logo" height="213" width="213">
+                  </a>
               </div>
           </div>
 
@@ -78,7 +80,9 @@
           </section>
 
             <div class="navbar-right mr-8" style="display: flex;">
-                <h1 class="navbar-brand" href="{% url 'home_page' %}" style="font-size: 19px; font-family: Courier, monospace; color: #356a6b !important;">RenataKrol.pl</h1>
+                <a href="{% url 'home_page' %}">
+                    <h1 class="navbar-brand" href="{% url 'home_page' %}" style="font-size: 19px; font-family: Courier, monospace; color: #356a6b !important;">RenataKrol.pl</h1>
+                </a>
                 <img src="{% static 'img/logo.png' %}" alt="" height="50" width="50">
             </div>
 
