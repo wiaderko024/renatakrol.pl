@@ -10,25 +10,32 @@
         .navbar-open .navbar .nav-navbar>.nav-link {
             color: #757575 !important;
         }
+
+        .header {
+            background-color: white;
+        }
+        .header-img {
+            height: 100%;
+            width: 100%;
+        }
+        .caption {
+            position: absolute;
+            font-family: Courier, monospace;
+            font-size: 50px;
+            color: #b7b5b4;
+            top: 24%;
+            left: 10%;
+        }
     </style>
 {% endblock %}
 
 {% block content %}
-    <section class="section text-white" style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
-        <canvas class="constellation" width="1440" height="727"></canvas>
+    {% include 'navbar-mini.html' %}
 
-        <div class="container">
-          <header class="section-header">
-            <small>Yoga Pilates Głos</small>
-            <h2>Cennik</h2>
-            <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab, aperiam aspernatur beatae doloribus est ex exercitationem hic magnam magni mollitia necessitatibus quaerat? Dicta doloremque excepturi minima non pariatur quasi.</p>
-          </header>
-
-            {% for price in prices %}
-                <p class="text-center">{{ price }}</p>
-            {% endfor %}
-
+    <header class="header text-dark" style="padding: 0;">
+        <div style="text-align: center; position: relative; height: 100vh;">
+            <img class="header-img" src="{% static 'img/oferta.png' %}" alt="...">
+            <div class="caption">O F E R T A</div>
         </div>
-      </section>
+    </header>
 {% endblock %}
