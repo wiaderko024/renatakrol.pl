@@ -10,17 +10,28 @@
         .nl {
             color: #757575 !important;
         }
+
+        .header {
+            background-color: white;
+        }
+        .caption {
+            position: absolute;
+            font-family: Courier, monospace;
+            font-size: 60px;
+            color: #b7b5b4;
+            top: 27%;
+            right: 22%;
+        }
     </style>
 {% endblock %}
 
 {% block content %}
     {% include 'navbar-mini.html' %}
 
-    <header class="header text-white pt-12 pb-10" style="background-image: url({% static 'img/rpk.jpg' %});">
-        <div class="container">
-            <h2 class="display-4">Renata Król</h2>
-            <br>
-            <h2 class="display-4">Yoga Pilates Głos</h2>
+    <header class="header text-dark" style="padding: 0;">
+        <div style="text-align: center; position: relative; height: 100vh;">
+            <img class="header-img" src="{% static 'img/wpisy.png' %}" alt="...">
+            <div class="caption">W P I S Y</div>
         </div>
     </header>
 
@@ -40,7 +51,7 @@
                         </div>
 
                         <div class="col-md-6 text-center text-md-left">
-                            <small>{{ post.kind }} {{ post.created_at }}</small>
+                            <small>{{ post.created_at }}</small>
                             <h3>{{ post.title }}</h3>
                             <p>{{ post.description }}</p>
                             <br>
