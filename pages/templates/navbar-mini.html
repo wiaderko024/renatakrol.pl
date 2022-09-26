@@ -16,6 +16,15 @@
             max-width: none !important;
         }
 
+        @media (max-width: 990px) {
+            .nav-full-logo {
+                display: none;
+            }
+            .nav-logo {
+                display: inline !important;
+            }
+        }
+
     </style>
 {% endblock %}
 
@@ -26,7 +35,7 @@
           <div class="navbar-left">
             <button class="navbar-toggler" type="button" style="color: #356a6b; height: 75px; width: 75px;">&#9776;</button>
             <a class="navbar-brand" href="{% url 'home_page' %}" style="margin-left: 1.7rem;">
-                <img src="{% static 'img/logo.png' %}" alt="">
+                <img class="nav-full-logo" src="{% static 'img/logo.png' %}" alt="">
             </a>
           </div>
 
@@ -48,6 +57,7 @@
                 <a href="{% url 'home_page' %}">
                     <h1 class="navbar-brand" href="{% url 'home_page' %}" style="font-size: 19px; font-family: Courier, monospace; color: #356a6b !important;">RenataKrol.pl</h1>
                 </a>
+                <img class="nav-logo" src="{% static 'img/logo.png' %}" alt="" height="50" width="50" style="display: none;">
             </div>
 
     </div>
