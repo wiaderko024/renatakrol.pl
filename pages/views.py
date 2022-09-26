@@ -22,6 +22,10 @@ def home_page(request):
 
     if all_events.count() >= 3:
         new_events = [events_list.pop(), events_list.pop(), events_list.pop()]
+    elif all_events.count() == 2:
+        new_events = [events_list.pop(), events_list.pop()]
+    elif all_events.count() == 1:
+        new_events = [events_list.pop()]
 
     for p in posts:
         photos.append(p.cover.url)

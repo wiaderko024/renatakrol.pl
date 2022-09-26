@@ -6,6 +6,11 @@
         .navbar-open .navbar .nav-navbar>.nav-link {
             color: #757575 !important;
         }
+
+        h1, h2, h3, h4, h5, h6, p, small {
+            font-family: Courier, monospace;
+        }
+
         .header {
             background-color: white;
         }
@@ -122,10 +127,10 @@
           </div>
 
         </div>
-      </section>4
+      </section>
 
         <section class="section mb-7 text-justify">
-            <div class="container" style="font-size: 1.1rem;">
+            <div class="container" style="font-size: 1.1rem; font-family: 'Courier New', monospace;">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eaque ipsa iure non perspiciatis?
                     Commodi error eum nihil nisi pariatur repudiandae similique soluta vero. Dolor earum ipsum saepe
                     sapiente veritatis.
@@ -159,7 +164,7 @@
             <header class="section-header">
                 <small>Wpisy</small>
                 <h2>Aktualności</h2>
-                <hr>`
+                <hr>
             </header>
             {% if posts.count != 0 %}
 
@@ -172,7 +177,7 @@
 
 
                         <div class="col-md-6 text-center text-md-left">
-                            <small>{{ post.kind }} {{ post.created_at }}</small>
+                            <small>{{ post.created_at }}</small>
                             <h3>{{ post.title }}</h3>
                             <p>{{ post.description }}</p>
                             <br>
